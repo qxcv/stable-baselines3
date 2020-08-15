@@ -25,6 +25,7 @@ Others:
 - Improve typing coverage of the ``VecEnv``
 - Removed ``AlreadySteppingError`` and ``NotSteppingError`` that were not used
 - Removed ``device`` keyword argument of policies; use ``policy.to(device)`` instead.
+- All algorithms and policies now assume image-based environments put channels as the leading axis, rather than the final one. Environments that put channels last should be wrapped in a `VecTranspose` wrapper before being passed to any algorithms.
 
 Documentation:
 ^^^^^^^^^^^^^^
